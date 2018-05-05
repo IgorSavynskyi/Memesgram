@@ -20,6 +20,24 @@
 		379D2CE9209D98D6003DBD08 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CE8209D98D6003DBD08 /* FeedPresenter.swift */; };
 		379D2CED209D9A19003DBD08 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CEC209D9A19003DBD08 /* ViewControllerFactory.swift */; };
 		379D2CEF209D9B10003DBD08 /* StoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CEE209D9B10003DBD08 /* StoryboardLoader.swift */; };
+		379D2D10209DC95C003DBD08 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D00209DC95C003DBD08 /* Commons.swift */; };
+		379D2D11209DC95C003DBD08 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D02209DC95C003DBD08 /* ServerConfig.swift */; };
+		379D2D12209DC95C003DBD08 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D04209DC95C003DBD08 /* ServerResponse.swift */; };
+		379D2D13209DC95C003DBD08 /* LinkResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D06209DC95C003DBD08 /* LinkResponseItem.swift */; };
+		379D2D14209DC95C003DBD08 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D08209DC95C003DBD08 /* NetworkServiceProtocol.swift */; };
+		379D2D15209DC95C003DBD08 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D09209DC95C003DBD08 /* NetworkService.swift */; };
+		379D2D16209DC95C003DBD08 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D0B209DC95C003DBD08 /* RequestProtocol.swift */; };
+		379D2D17209DC95C003DBD08 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D0C209DC95C003DBD08 /* Request.swift */; };
+		379D2D18209DC95C003DBD08 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D0E209DC95C003DBD08 /* NetworkClient.swift */; };
+		379D2D19209DC95C003DBD08 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D0F209DC95C003DBD08 /* NetworkError.swift */; };
+		379D2D1D209DCD68003DBD08 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D1C209DCD68003DBD08 /* ApplicationService.swift */; };
+		379D2D21209DCEAA003DBD08 /* Globas Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D20209DCEAA003DBD08 /* Globas Aliases.swift */; };
+		379D2D24209DCFDC003DBD08 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D23209DCFDC003DBD08 /* String+Additions.swift */; };
+		379D2D26209DD02D003DBD08 /* Dictionary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */; };
+		379D2D29209DD203003DBD08 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D28209DD203003DBD08 /* LinkService.swift */; };
+		379D2D2D209DD356003DBD08 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D2C209DD356003DBD08 /* FeedViewModel.swift */; };
+		379D2D30209DD526003DBD08 /* LinksRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */; };
+		379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D32209DD57E003DBD08 /* JSONSerializable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +56,24 @@
 		379D2CE8209D98D6003DBD08 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		379D2CEC209D9A19003DBD08 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		379D2CEE209D9B10003DBD08 /* StoryboardLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoader.swift; sourceTree = "<group>"; };
+		379D2D00209DC95C003DBD08 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		379D2D02209DC95C003DBD08 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		379D2D04209DC95C003DBD08 /* ServerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		379D2D06209DC95C003DBD08 /* LinkResponseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkResponseItem.swift; sourceTree = "<group>"; };
+		379D2D08209DC95C003DBD08 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		379D2D09209DC95C003DBD08 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		379D2D0B209DC95C003DBD08 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		379D2D0C209DC95C003DBD08 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		379D2D0E209DC95C003DBD08 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		379D2D0F209DC95C003DBD08 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		379D2D1C209DCD68003DBD08 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		379D2D20209DCEAA003DBD08 /* Globas Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Globas Aliases.swift"; sourceTree = "<group>"; };
+		379D2D23209DCFDC003DBD08 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Additions.swift"; sourceTree = "<group>"; };
+		379D2D28209DD203003DBD08 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
+		379D2D2C209DD356003DBD08 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRequestParameters.swift; sourceTree = "<group>"; };
+		379D2D32209DD57E003DBD08 /* JSONSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +143,11 @@
 		379D2CD7209D8FD2003DBD08 /* Core Layer */ = {
 			isa = PBXGroup;
 			children = (
+				379D2D1A209DCD40003DBD08 /* Services Group */,
+				379D2CFF209DC95C003DBD08 /* Network Layer */,
+				379D2D31209DD561003DBD08 /* Protocols */,
+				379D2D22209DCFBC003DBD08 /* Extensions */,
+				379D2D1F209DCE95003DBD08 /* Utils */,
 			);
 			path = "Core Layer";
 			sourceTree = "<group>";
@@ -116,6 +157,7 @@
 			children = (
 				379D2CD9209D9002003DBD08 /* View */,
 				379D2CDA209D9007003DBD08 /* Presenter */,
+				379D2D2A209DD31A003DBD08 /* Feed Common */,
 			);
 			path = FeedModule;
 			sourceTree = "<group>";
@@ -182,6 +224,146 @@
 				379D2CEE209D9B10003DBD08 /* StoryboardLoader.swift */,
 			);
 			path = "Controllers Initialization Group";
+			sourceTree = "<group>";
+		};
+		379D2CFF209DC95C003DBD08 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D00209DC95C003DBD08 /* Commons.swift */,
+				379D2D01209DC95C003DBD08 /* ServerConfig */,
+				379D2D03209DC95C003DBD08 /* Resposnse */,
+				379D2D07209DC95C003DBD08 /* NetworkService */,
+				379D2D0A209DC95C003DBD08 /* Request */,
+				379D2D0D209DC95C003DBD08 /* NetworkClient */,
+				379D2D0F209DC95C003DBD08 /* NetworkError.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		379D2D01209DC95C003DBD08 /* ServerConfig */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D02209DC95C003DBD08 /* ServerConfig.swift */,
+			);
+			path = ServerConfig;
+			sourceTree = "<group>";
+		};
+		379D2D03209DC95C003DBD08 /* Resposnse */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D04209DC95C003DBD08 /* ServerResponse.swift */,
+				379D2D05209DC95C003DBD08 /* ResponseItems */,
+			);
+			path = Resposnse;
+			sourceTree = "<group>";
+		};
+		379D2D05209DC95C003DBD08 /* ResponseItems */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D06209DC95C003DBD08 /* LinkResponseItem.swift */,
+			);
+			path = ResponseItems;
+			sourceTree = "<group>";
+		};
+		379D2D07209DC95C003DBD08 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D08209DC95C003DBD08 /* NetworkServiceProtocol.swift */,
+				379D2D09209DC95C003DBD08 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		379D2D0A209DC95C003DBD08 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D0B209DC95C003DBD08 /* RequestProtocol.swift */,
+				379D2D0C209DC95C003DBD08 /* Request.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		379D2D0D209DC95C003DBD08 /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D0E209DC95C003DBD08 /* NetworkClient.swift */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
+		379D2D1A209DCD40003DBD08 /* Services Group */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D27209DD1EB003DBD08 /* LinkService */,
+				379D2D1B209DCD4F003DBD08 /* ApplicationService */,
+			);
+			path = "Services Group";
+			sourceTree = "<group>";
+		};
+		379D2D1B209DCD4F003DBD08 /* ApplicationService */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D1C209DCD68003DBD08 /* ApplicationService.swift */,
+			);
+			path = ApplicationService;
+			sourceTree = "<group>";
+		};
+		379D2D1F209DCE95003DBD08 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D20209DCEAA003DBD08 /* Globas Aliases.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		379D2D22209DCFBC003DBD08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D23209DCFDC003DBD08 /* String+Additions.swift */,
+				379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		379D2D27209DD1EB003DBD08 /* LinkService */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D28209DD203003DBD08 /* LinkService.swift */,
+				379D2D2E209DD4F5003DBD08 /* Request Models */,
+			);
+			path = LinkService;
+			sourceTree = "<group>";
+		};
+		379D2D2A209DD31A003DBD08 /* Feed Common */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D2B209DD345003DBD08 /* FeedViewModel */,
+			);
+			path = "Feed Common";
+			sourceTree = "<group>";
+		};
+		379D2D2B209DD345003DBD08 /* FeedViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D2C209DD356003DBD08 /* FeedViewModel.swift */,
+			);
+			path = FeedViewModel;
+			sourceTree = "<group>";
+		};
+		379D2D2E209DD4F5003DBD08 /* Request Models */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */,
+			);
+			path = "Request Models";
+			sourceTree = "<group>";
+		};
+		379D2D31209DD561003DBD08 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D32209DD57E003DBD08 /* JSONSerializable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,16 +437,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379D2D18209DC95C003DBD08 /* NetworkClient.swift in Sources */,
 				379D2CE7209D970D003DBD08 /* FeedViewInputOutput.swift in Sources */,
+				379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */,
 				379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */,
+				379D2D21209DCEAA003DBD08 /* Globas Aliases.swift in Sources */,
 				379D2CE9209D98D6003DBD08 /* FeedPresenter.swift in Sources */,
+				379D2D12209DC95C003DBD08 /* ServerResponse.swift in Sources */,
 				379D2CED209D9A19003DBD08 /* ViewControllerFactory.swift in Sources */,
 				379D2CE3209D94B7003DBD08 /* Navigator.swift in Sources */,
 				379D2CEF209D9B10003DBD08 /* StoryboardLoader.swift in Sources */,
+				379D2D17209DC95C003DBD08 /* Request.swift in Sources */,
+				379D2D19209DC95C003DBD08 /* NetworkError.swift in Sources */,
+				379D2D1D209DCD68003DBD08 /* ApplicationService.swift in Sources */,
+				379D2D2D209DD356003DBD08 /* FeedViewModel.swift in Sources */,
 				379D2CC2209D8D13003DBD08 /* AppDelegate.swift in Sources */,
 				379D2CE1209D9341003DBD08 /* Coordinator.swift in Sources */,
 				379D2CDF209D9324003DBD08 /* LandingCoordinator.swift in Sources */,
+				379D2D24209DCFDC003DBD08 /* String+Additions.swift in Sources */,
+				379D2D15209DC95C003DBD08 /* NetworkService.swift in Sources */,
+				379D2D10209DC95C003DBD08 /* Commons.swift in Sources */,
+				379D2D13209DC95C003DBD08 /* LinkResponseItem.swift in Sources */,
+				379D2D11209DC95C003DBD08 /* ServerConfig.swift in Sources */,
 				379D2CE5209D9532003DBD08 /* LandingNavigator.swift in Sources */,
+				379D2D30209DD526003DBD08 /* LinksRequestParameters.swift in Sources */,
+				379D2D26209DD02D003DBD08 /* Dictionary+Additions.swift in Sources */,
+				379D2D29209DD203003DBD08 /* LinkService.swift in Sources */,
+				379D2D16209DC95C003DBD08 /* RequestProtocol.swift in Sources */,
+				379D2D14209DC95C003DBD08 /* NetworkServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,4 +2,6 @@ import Foundation
 
 protocol FeedViewInput: class {}
 
-protocol FeedViewOutput {}
+protocol FeedViewOutput {
+    func didRequestLinksAction()
+}

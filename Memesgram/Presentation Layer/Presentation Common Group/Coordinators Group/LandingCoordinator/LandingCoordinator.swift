@@ -10,14 +10,13 @@ class LandingCoordinator {
     // MARK: - Private API
     
     private func runFeedFlow() {
-        let feedPresenter = FeedPresenter()
-        let feedDestination = LandingNavigator.Destination.feed(feedPresenter)
-        navigator.navigate(to: feedDestination)
+        let presenter = FeedPresenter()
+        navigator.navigate(to: .feed(presenter))
     }
 }
 
 extension LandingCoordinator: Coordinator {
-    
+
     func start() {
         runFeedFlow()
     }
