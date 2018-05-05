@@ -38,6 +38,10 @@
 		379D2D2D209DD356003DBD08 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D2C209DD356003DBD08 /* FeedViewModel.swift */; };
 		379D2D30209DD526003DBD08 /* LinksRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */; };
 		379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D32209DD57E003DBD08 /* JSONSerializable.swift */; };
+		379D2D36209E01C9003DBD08 /* TextLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D35209E01C9003DBD08 /* TextLinkCell.swift */; };
+		379D2D39209E02BA003DBD08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D38209E02BA003DBD08 /* Colors.swift */; };
+		379D2D3B209E0386003DBD08 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D3A209E0386003DBD08 /* Fonts.swift */; };
+		379D2D3F209E0451003DBD08 /* UILabel+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D3E209E0451003DBD08 /* UILabel+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,10 @@
 		379D2D2C209DD356003DBD08 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRequestParameters.swift; sourceTree = "<group>"; };
 		379D2D32209DD57E003DBD08 /* JSONSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
+		379D2D35209E01C9003DBD08 /* TextLinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLinkCell.swift; sourceTree = "<group>"; };
+		379D2D38209E02BA003DBD08 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		379D2D3A209E0386003DBD08 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		379D2D3E209E0451003DBD08 /* UILabel+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 			children = (
 				379D2D1A209DCD40003DBD08 /* Services Group */,
 				379D2CFF209DC95C003DBD08 /* Network Layer */,
+				379D2D37209E028E003DBD08 /* Styleguide */,
 				379D2D31209DD561003DBD08 /* Protocols */,
 				379D2D22209DCFBC003DBD08 /* Extensions */,
 				379D2D1F209DCE95003DBD08 /* Utils */,
@@ -321,6 +330,7 @@
 			children = (
 				379D2D23209DCFDC003DBD08 /* String+Additions.swift */,
 				379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */,
+				379D2D3E209E0451003DBD08 /* UILabel+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +347,7 @@
 		379D2D2A209DD31A003DBD08 /* Feed Common */ = {
 			isa = PBXGroup;
 			children = (
+				379D2D34209E018C003DBD08 /* Feed Cells */,
 				379D2D2B209DD345003DBD08 /* FeedViewModel */,
 			);
 			path = "Feed Common";
@@ -364,6 +375,23 @@
 				379D2D32209DD57E003DBD08 /* JSONSerializable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		379D2D34209E018C003DBD08 /* Feed Cells */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D35209E01C9003DBD08 /* TextLinkCell.swift */,
+			);
+			path = "Feed Cells";
+			sourceTree = "<group>";
+		};
+		379D2D37209E028E003DBD08 /* Styleguide */ = {
+			isa = PBXGroup;
+			children = (
+				379D2D38209E02BA003DBD08 /* Colors.swift */,
+				379D2D3A209E0386003DBD08 /* Fonts.swift */,
+			);
+			path = Styleguide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379D2D18209DC95C003DBD08 /* NetworkClient.swift in Sources */,
+				379D2D39209E02BA003DBD08 /* Colors.swift in Sources */,
 				379D2CE7209D970D003DBD08 /* FeedViewInputOutput.swift in Sources */,
 				379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */,
 				379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */,
@@ -445,6 +474,7 @@
 				379D2CE9209D98D6003DBD08 /* FeedPresenter.swift in Sources */,
 				379D2D12209DC95C003DBD08 /* ServerResponse.swift in Sources */,
 				379D2CED209D9A19003DBD08 /* ViewControllerFactory.swift in Sources */,
+				379D2D36209E01C9003DBD08 /* TextLinkCell.swift in Sources */,
 				379D2CE3209D94B7003DBD08 /* Navigator.swift in Sources */,
 				379D2CEF209D9B10003DBD08 /* StoryboardLoader.swift in Sources */,
 				379D2D17209DC95C003DBD08 /* Request.swift in Sources */,
@@ -459,7 +489,9 @@
 				379D2D10209DC95C003DBD08 /* Commons.swift in Sources */,
 				379D2D13209DC95C003DBD08 /* LinkResponseItem.swift in Sources */,
 				379D2D11209DC95C003DBD08 /* ServerConfig.swift in Sources */,
+				379D2D3B209E0386003DBD08 /* Fonts.swift in Sources */,
 				379D2CE5209D9532003DBD08 /* LandingNavigator.swift in Sources */,
+				379D2D3F209E0451003DBD08 /* UILabel+Additions.swift in Sources */,
 				379D2D30209DD526003DBD08 /* LinksRequestParameters.swift in Sources */,
 				379D2D26209DD02D003DBD08 /* Dictionary+Additions.swift in Sources */,
 				379D2D29209DD203003DBD08 /* LinkService.swift in Sources */,
