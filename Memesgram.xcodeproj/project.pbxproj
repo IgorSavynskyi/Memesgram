@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		379D2CC2209D8D13003DBD08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC1209D8D13003DBD08 /* AppDelegate.swift */; };
-		379D2CC4209D8D13003DBD08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC3209D8D13003DBD08 /* ViewController.swift */; };
+		379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC3209D8D13003DBD08 /* FeedViewController.swift */; };
 		379D2CC7209D8D13003DBD08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379D2CC5209D8D13003DBD08 /* Main.storyboard */; };
 		379D2CC9209D8D14003DBD08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379D2CC8209D8D14003DBD08 /* Assets.xcassets */; };
 		379D2CCC209D8D14003DBD08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379D2CCA209D8D14003DBD08 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		379D2CBE209D8D13003DBD08 /* Memesgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memesgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379D2CC1209D8D13003DBD08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		379D2CC3209D8D13003DBD08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		379D2CC3209D8D13003DBD08 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		379D2CC6209D8D13003DBD08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		379D2CC8209D8D14003DBD08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		379D2CCB209D8D14003DBD08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,78 @@
 		379D2CC0209D8D13003DBD08 /* Memesgram */ = {
 			isa = PBXGroup;
 			children = (
-				379D2CC1209D8D13003DBD08 /* AppDelegate.swift */,
-				379D2CC3209D8D13003DBD08 /* ViewController.swift */,
-				379D2CC5209D8D13003DBD08 /* Main.storyboard */,
-				379D2CC8209D8D14003DBD08 /* Assets.xcassets */,
-				379D2CCA209D8D14003DBD08 /* LaunchScreen.storyboard */,
-				379D2CCD209D8D14003DBD08 /* Info.plist */,
+				379D2CD3209D8F72003DBD08 /* Resources */,
+				379D2CD5209D8F87003DBD08 /* Application Layer */,
+				379D2CD6209D8FBB003DBD08 /* Presentation Layer */,
+				379D2CD7209D8FD2003DBD08 /* Core Layer */,
 			);
 			path = Memesgram;
+			sourceTree = "<group>";
+		};
+		379D2CD3209D8F72003DBD08 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				379D2CC8209D8D14003DBD08 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		379D2CD5209D8F87003DBD08 /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				379D2CC1209D8D13003DBD08 /* AppDelegate.swift */,
+				379D2CCD209D8D14003DBD08 /* Info.plist */,
+			);
+			path = "Application Layer";
+			sourceTree = "<group>";
+		};
+		379D2CD6209D8FBB003DBD08 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				379D2CD8209D8FF2003DBD08 /* FeedModule */,
+				379D2CDB209D9069003DBD08 /* Storyboards */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		379D2CD7209D8FD2003DBD08 /* Core Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Layer";
+			sourceTree = "<group>";
+		};
+		379D2CD8209D8FF2003DBD08 /* FeedModule */ = {
+			isa = PBXGroup;
+			children = (
+				379D2CD9209D9002003DBD08 /* View */,
+				379D2CDA209D9007003DBD08 /* Presenter */,
+			);
+			path = FeedModule;
+			sourceTree = "<group>";
+		};
+		379D2CD9209D9002003DBD08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				379D2CC3209D8D13003DBD08 /* FeedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		379D2CDA209D9007003DBD08 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		379D2CDB209D9069003DBD08 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				379D2CC5209D8D13003DBD08 /* Main.storyboard */,
+				379D2CCA209D8D14003DBD08 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				379D2CC4209D8D13003DBD08 /* ViewController.swift in Sources */,
+				379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */,
 				379D2CC2209D8D13003DBD08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +346,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAGAM5LW4V;
-				INFOPLIST_FILE = Memesgram/Info.plist;
+				INFOPLIST_FILE = "Memesgram/Application Layer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +365,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAGAM5LW4V;
-				INFOPLIST_FILE = Memesgram/Info.plist;
+				INFOPLIST_FILE = "Memesgram/Application Layer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
