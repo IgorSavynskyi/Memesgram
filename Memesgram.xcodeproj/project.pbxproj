@@ -12,6 +12,7 @@
 		37138E1E209ECF49009B2FB0 /* FeedDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E1D209ECF49009B2FB0 /* FeedDisplayManager.swift */; };
 		37138E20209ED2F4009B2FB0 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */; };
 		37138E22209ED506009B2FB0 /* ReusableViewTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */; };
+		37138E25209EE3C9009B2FB0 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E24209EE3C9009B2FB0 /* ImageDownloader.swift */; };
 		379D2CC2209D8D13003DBD08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC1209D8D13003DBD08 /* AppDelegate.swift */; };
 		379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC3209D8D13003DBD08 /* FeedViewController.swift */; };
 		379D2CC7209D8D13003DBD08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379D2CC5209D8D13003DBD08 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		37138E1D209ECF49009B2FB0 /* FeedDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDisplayManager.swift; sourceTree = "<group>"; };
 		37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewTrait.swift; sourceTree = "<group>"; };
+		37138E24209EE3C9009B2FB0 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		379D2CBE209D8D13003DBD08 /* Memesgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memesgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379D2CC1209D8D13003DBD08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379D2CC3209D8D13003DBD08 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37138E23209EE3A7009B2FB0 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				37138E24209EE3C9009B2FB0 /* ImageDownloader.swift */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
 		379D2CB5209D8D13003DBD08 = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +324,7 @@
 		379D2D1A209DCD40003DBD08 /* Services Group */ = {
 			isa = PBXGroup;
 			children = (
+				37138E23209EE3A7009B2FB0 /* ImageDownloader */,
 				379D2D27209DD1EB003DBD08 /* LinkService */,
 				379D2D1B209DCD4F003DBD08 /* ApplicationService */,
 			);
@@ -488,6 +499,7 @@
 				379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */,
 				379D2D21209DCEAA003DBD08 /* Globas Aliases.swift in Sources */,
 				37138E1C209EC9D6009B2FB0 /* MediaLinkCell.swift in Sources */,
+				37138E25209EE3C9009B2FB0 /* ImageDownloader.swift in Sources */,
 				379D2CE9209D98D6003DBD08 /* FeedPresenter.swift in Sources */,
 				379D2D12209DC95C003DBD08 /* ServerResponse.swift in Sources */,
 				379D2CED209D9A19003DBD08 /* ViewControllerFactory.swift in Sources */,
