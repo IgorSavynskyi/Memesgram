@@ -36,8 +36,9 @@ class MediaLinkCell: TextLinkCell {
     override func setupElements() {
         super.setupElements()
         activityIndicator.color = .headlineColor
-        saveButton.setTitleColor(.headlineColor, for: .normal)
+        saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = .header
+        saveButton.backgroundColor = .headlineColor
     }
     
     override func updateUI() {
