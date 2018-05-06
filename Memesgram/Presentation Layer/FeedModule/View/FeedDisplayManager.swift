@@ -57,8 +57,10 @@ extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
 
         let columns: CGFloat = ApplicationService.shared.isLandscape ? 2 : 1
         let cellSpacing: CGFloat = ApplicationService.shared.isLandscape ? 10 : 0
+        let availableWidth = ApplicationService.shared.isLandscape ? max(collectionView.bounds.width, collectionView.bounds.height)
+                                                                   : min(collectionView.bounds.width, collectionView.bounds.height)
         
-        let width = (collectionView.bounds.width - cellSpacing)/max(columns, 1)
+        let width = (availableWidth - cellSpacing)/max(columns, 1)
         
         switch link.type {
         case .text:

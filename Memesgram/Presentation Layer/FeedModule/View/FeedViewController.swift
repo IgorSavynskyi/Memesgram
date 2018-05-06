@@ -18,6 +18,20 @@ class FeedViewController: UIViewController {
         output.didRequestLinksAction()
     }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        var ip: IndexPath?
+        if let topCell = collectionView?.visibleCells.first {
+            ip = collectionView?.indexPath(for: topCell)
+        }
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            self.collectionView?.collectionViewLayout.invalidateLayout()
+        }) { (context) in
+            if let ip = ip {
+                self.collectionView?.scrollToItem(at: ip, at: .top, animated: true)
+            }
+        }
+    }
 }
 
 // MARK: - FeedViewInput

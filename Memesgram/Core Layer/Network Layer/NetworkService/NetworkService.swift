@@ -36,7 +36,6 @@ class NetworkService: NetworkServiceProtocol {
                             completion(.success(empty))
                         } else {
                             let mapped = try JSONDecoder().decode(Response.self, from: data)
-                            let jsonObj = try JSONSerialization.jsonObject(with: data, options: [])
                             completion(.success(mapped))
                         }
                     } catch {
