@@ -1,12 +1,14 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    @IBOutlet weak private var collectionView: UICollectionView!
+    
     var output: FeedViewOutput!
+    lazy private var feedDisplay = FeedDisplayManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        output.viewIsReady()
     }
     
     // MARK: - Actions
@@ -18,6 +20,16 @@ class FeedViewController: UIViewController {
     
 }
 
-extension FeedViewController: FeedViewInput {}
+// MARK: - FeedViewInput
+extension FeedViewController: FeedViewInput {
+    func setupInitialState() {
+        view.backgroundColor = .headlineColor
+        feedDisplay.collectionView = collectionView
+    }
+    
+    func renderLinks(_ links: [LinkViewModel]) {
+        feedDisplay.renderLinks(links)
+    }
+}
 
 

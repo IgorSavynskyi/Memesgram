@@ -1,7 +1,11 @@
 import Foundation
 
-protocol FeedViewInput: class {}
+protocol FeedViewInput: class, ErrorAlertPresentable {
+    func setupInitialState()
+    func renderLinks(_ links: [LinkViewModel])
+}
 
 protocol FeedViewOutput {
+    func viewIsReady()
     func didRequestLinksAction()
 }

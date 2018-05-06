@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37138E1A209EC765009B2FB0 /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E19209EC765009B2FB0 /* Date+Additions.swift */; };
+		37138E1C209EC9D6009B2FB0 /* MediaLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E1B209EC9D6009B2FB0 /* MediaLinkCell.swift */; };
+		37138E1E209ECF49009B2FB0 /* FeedDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E1D209ECF49009B2FB0 /* FeedDisplayManager.swift */; };
+		37138E20209ED2F4009B2FB0 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */; };
+		37138E22209ED506009B2FB0 /* ReusableViewTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */; };
 		379D2CC2209D8D13003DBD08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC1209D8D13003DBD08 /* AppDelegate.swift */; };
 		379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC3209D8D13003DBD08 /* FeedViewController.swift */; };
 		379D2CC7209D8D13003DBD08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379D2CC5209D8D13003DBD08 /* Main.storyboard */; };
@@ -45,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37138E19209EC765009B2FB0 /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
+		37138E1B209EC9D6009B2FB0 /* MediaLinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLinkCell.swift; sourceTree = "<group>"; };
+		37138E1D209ECF49009B2FB0 /* FeedDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDisplayManager.swift; sourceTree = "<group>"; };
+		37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewTrait.swift; sourceTree = "<group>"; };
 		379D2CBE209D8D13003DBD08 /* Memesgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memesgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379D2CC1209D8D13003DBD08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379D2CC3209D8D13003DBD08 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +186,7 @@
 			children = (
 				379D2CC3209D8D13003DBD08 /* FeedViewController.swift */,
 				379D2CE6209D970D003DBD08 /* FeedViewInputOutput.swift */,
+				37138E1D209ECF49009B2FB0 /* FeedDisplayManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 				379D2D23209DCFDC003DBD08 /* String+Additions.swift */,
 				379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */,
 				379D2D3E209E0451003DBD08 /* UILabel+Additions.swift */,
+				37138E19209EC765009B2FB0 /* Date+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				379D2D32209DD57E003DBD08 /* JSONSerializable.swift */,
+				37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */,
+				37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -381,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				379D2D35209E01C9003DBD08 /* TextLinkCell.swift */,
+				37138E1B209EC9D6009B2FB0 /* MediaLinkCell.swift */,
 			);
 			path = "Feed Cells";
 			sourceTree = "<group>";
@@ -466,14 +481,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				379D2D18209DC95C003DBD08 /* NetworkClient.swift in Sources */,
+				37138E22209ED506009B2FB0 /* ReusableViewTrait.swift in Sources */,
 				379D2D39209E02BA003DBD08 /* Colors.swift in Sources */,
 				379D2CE7209D970D003DBD08 /* FeedViewInputOutput.swift in Sources */,
 				379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */,
 				379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */,
 				379D2D21209DCEAA003DBD08 /* Globas Aliases.swift in Sources */,
+				37138E1C209EC9D6009B2FB0 /* MediaLinkCell.swift in Sources */,
 				379D2CE9209D98D6003DBD08 /* FeedPresenter.swift in Sources */,
 				379D2D12209DC95C003DBD08 /* ServerResponse.swift in Sources */,
 				379D2CED209D9A19003DBD08 /* ViewControllerFactory.swift in Sources */,
+				37138E20209ED2F4009B2FB0 /* AlertPresentable.swift in Sources */,
 				379D2D36209E01C9003DBD08 /* TextLinkCell.swift in Sources */,
 				379D2CE3209D94B7003DBD08 /* Navigator.swift in Sources */,
 				379D2CEF209D9B10003DBD08 /* StoryboardLoader.swift in Sources */,
@@ -486,6 +504,7 @@
 				379D2CDF209D9324003DBD08 /* LandingCoordinator.swift in Sources */,
 				379D2D24209DCFDC003DBD08 /* String+Additions.swift in Sources */,
 				379D2D15209DC95C003DBD08 /* NetworkService.swift in Sources */,
+				37138E1A209EC765009B2FB0 /* Date+Additions.swift in Sources */,
 				379D2D10209DC95C003DBD08 /* Commons.swift in Sources */,
 				379D2D13209DC95C003DBD08 /* LinkResponseItem.swift in Sources */,
 				379D2D11209DC95C003DBD08 /* ServerConfig.swift in Sources */,
@@ -497,6 +516,7 @@
 				379D2D29209DD203003DBD08 /* LinkService.swift in Sources */,
 				379D2D16209DC95C003DBD08 /* RequestProtocol.swift in Sources */,
 				379D2D14209DC95C003DBD08 /* NetworkServiceProtocol.swift in Sources */,
+				37138E1E209ECF49009B2FB0 /* FeedDisplayManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,16 +15,23 @@ class FeedPresenter {
     }
 }
 
-
+// MARK: - FeedViewOutput
 extension FeedPresenter: FeedViewOutput {
+
+    func viewIsReady() {
+        view.setupInitialState()
+    }
+
     func didRequestLinksAction() {
         let params = generateRequestParameters()
         linkService.getTopLinks(params) { [weak self] (result) in
             switch result {
             case .success(let models):
                 print("✅SUCCESS \(models.count)")
+                self?.view.renderLinks(models)
             case .failure(let error):
                 print("❌Failure \(error.localizedDescription)")
+                self?.view.showError(title: nil, message: error.localizedDescription)
             }
         }
     }

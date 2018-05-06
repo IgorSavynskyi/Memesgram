@@ -9,4 +9,20 @@ struct LinkViewModel {
     var commentCount: Int
     var thumbnailUrl: String?
     var url: String?
+    
+    var type: LinkType {
+        if thumbnailUrl == nil {
+            return .text
+        } else {
+            return .media
+        }
+    }
+}
+
+// MARK: - Nested Types
+
+extension LinkViewModel {
+    enum LinkType {
+        case text, media
+    }
 }
