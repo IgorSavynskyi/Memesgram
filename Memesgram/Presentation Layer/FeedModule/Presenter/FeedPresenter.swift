@@ -34,7 +34,7 @@ class FeedPresenter: NSObject {
         if let error = error {
             view.showAlert(title: "Save error", message: error.localizedDescription)
         } else {
-            view.showAlert(title: "Saved", message: "✅")
+            ApplicationService.shared.vibrate()
         }
     }
     
