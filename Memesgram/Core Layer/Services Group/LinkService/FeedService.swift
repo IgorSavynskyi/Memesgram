@@ -1,6 +1,6 @@
 import Foundation
 
-class LinkService {
+class FeedService {
     typealias GetLinksCompletion = (_ result: Result<LinksPage>) -> Void
 
     private var networkService = NetworkService()

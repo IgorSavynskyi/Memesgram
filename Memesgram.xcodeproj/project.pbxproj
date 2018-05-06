@@ -45,7 +45,7 @@
 		379D2D21209DCEAA003DBD08 /* Globas Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D20209DCEAA003DBD08 /* Globas Aliases.swift */; };
 		379D2D24209DCFDC003DBD08 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D23209DCFDC003DBD08 /* String+Additions.swift */; };
 		379D2D26209DD02D003DBD08 /* Dictionary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */; };
-		379D2D29209DD203003DBD08 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D28209DD203003DBD08 /* LinkService.swift */; };
+		379D2D29209DD203003DBD08 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D28209DD203003DBD08 /* FeedService.swift */; };
 		379D2D2D209DD356003DBD08 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D2C209DD356003DBD08 /* FeedViewModel.swift */; };
 		379D2D30209DD526003DBD08 /* LinksRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */; };
 		379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2D32209DD57E003DBD08 /* JSONSerializable.swift */; };
@@ -96,7 +96,7 @@
 		379D2D20209DCEAA003DBD08 /* Globas Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Globas Aliases.swift"; sourceTree = "<group>"; };
 		379D2D23209DCFDC003DBD08 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 		379D2D25209DD02D003DBD08 /* Dictionary+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Additions.swift"; sourceTree = "<group>"; };
-		379D2D28209DD203003DBD08 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
+		379D2D28209DD203003DBD08 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		379D2D2C209DD356003DBD08 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		379D2D2F209DD526003DBD08 /* LinksRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRequestParameters.swift; sourceTree = "<group>"; };
 		379D2D32209DD57E003DBD08 /* JSONSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		379D2D27209DD1EB003DBD08 /* LinkService */ = {
 			isa = PBXGroup;
 			children = (
-				379D2D28209DD203003DBD08 /* LinkService.swift */,
+				379D2D28209DD203003DBD08 /* FeedService.swift */,
 				37138E2F209F350F009B2FB0 /* LinksPage.swift */,
 				379D2D2E209DD4F5003DBD08 /* Request Models */,
 			);
@@ -553,7 +553,7 @@
 				379D2D3F209E0451003DBD08 /* UILabel+Additions.swift in Sources */,
 				379D2D30209DD526003DBD08 /* LinksRequestParameters.swift in Sources */,
 				379D2D26209DD02D003DBD08 /* Dictionary+Additions.swift in Sources */,
-				379D2D29209DD203003DBD08 /* LinkService.swift in Sources */,
+				379D2D29209DD203003DBD08 /* FeedService.swift in Sources */,
 				379D2D16209DC95C003DBD08 /* RequestProtocol.swift in Sources */,
 				379D2D14209DC95C003DBD08 /* NetworkServiceProtocol.swift in Sources */,
 				37138E1E209ECF49009B2FB0 /* FeedDisplayManager.swift in Sources */,

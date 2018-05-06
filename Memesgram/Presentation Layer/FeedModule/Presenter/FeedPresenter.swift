@@ -2,13 +2,13 @@ import Foundation
 
 class FeedPresenter {
     weak var view: FeedViewInput!
-    private lazy var linkService = LinkService()
+    private lazy var feedService = FeedService()
     private lazy var paginator = FeedPaginator()
     
     // MARK: - Private API
     
     private func requestNewLinks() {
-        linkService.getTopLinks(paginator.toRequestParams) { [weak self] (result) in
+        feedService.getTopLinks(paginator.toRequestParams) { [weak self] (result) in
             switch result {
             case .success(let page):
                 print("✅SUCCESS \(page.links.count) AFTER: \(page.after)")
