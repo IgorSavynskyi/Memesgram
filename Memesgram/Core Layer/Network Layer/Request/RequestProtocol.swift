@@ -12,10 +12,7 @@ protocol RequestProtocol {
     
     /// Optional headers to append to the request.
     var headers: HeadersDict? { get set }
-    
-    /// If not set related `NetworkService` timeout is used.
     var timeout: TimeInterval? { get }
-    
     var parameters: JSON? { get set }
     
     /// Combine the specific request headers with the service's list
@@ -33,7 +30,6 @@ extension RequestProtocol {
     
     func headers(in service: NetworkServiceProtocol) -> HeadersDict {
         var params: HeadersDict = service.headers
-        // append (and replace if needed) with request's headers
         self.headers?.forEach({ k,v in params[k] = v })
         return params
     }

@@ -1,5 +1,3 @@
-import Foundation
-
-protocol FeedDisplayDelegate: class, MediaLinkCellDelegate {
+protocol FeedDisplayDelegate: MediaLinkCellDelegate {
     func lackOfItemsSignal()
 }

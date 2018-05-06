@@ -14,5 +14,4 @@ struct FeedPaginator {
                                       limit: 50,
                                       requestPeriod: requestPeriod.rawValue)
     }
-    
 }

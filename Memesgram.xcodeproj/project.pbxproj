@@ -349,7 +349,7 @@
 			children = (
 				37138E28209F09CE009B2FB0 /* ValidationService */,
 				37138E23209EE3A7009B2FB0 /* ImageDownloader */,
-				379D2D27209DD1EB003DBD08 /* LinkService */,
+				379D2D27209DD1EB003DBD08 /* FeedService */,
 				379D2D1B209DCD4F003DBD08 /* ApplicationService */,
 			);
 			path = "Services Group";
@@ -382,14 +382,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		379D2D27209DD1EB003DBD08 /* LinkService */ = {
+		379D2D27209DD1EB003DBD08 /* FeedService */ = {
 			isa = PBXGroup;
 			children = (
 				379D2D28209DD203003DBD08 /* FeedService.swift */,
 				37138E2F209F350F009B2FB0 /* LinksPage.swift */,
 				379D2D2E209DD4F5003DBD08 /* Request Models */,
 			);
-			path = LinkService;
+			path = FeedService;
 			sourceTree = "<group>";
 		};
 		379D2D2A209DD31A003DBD08 /* Feed Common */ = {
@@ -704,8 +704,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4PR4N2FLE7;
+				DEVELOPMENT_TEAM = EAGAM5LW4V;
 				INFOPLIST_FILE = "Memesgram/Application Layer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -714,6 +715,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorsavynskyi.Memesgram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -723,8 +725,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4PR4N2FLE7;
+				DEVELOPMENT_TEAM = EAGAM5LW4V;
 				INFOPLIST_FILE = "Memesgram/Application Layer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -733,6 +736,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorsavynskyi.Memesgram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

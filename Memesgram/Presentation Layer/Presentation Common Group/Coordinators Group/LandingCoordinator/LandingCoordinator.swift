@@ -17,7 +17,6 @@ class LandingCoordinator {
 }
 
 extension LandingCoordinator: Coordinator {
-
     func start() {
         runFeedFlow()
     }

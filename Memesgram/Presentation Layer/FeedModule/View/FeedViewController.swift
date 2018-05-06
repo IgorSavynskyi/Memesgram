@@ -10,7 +10,6 @@ class FeedViewController: UIViewController {
     lazy private var feedDisplay = FeedDisplayManager()
 
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
@@ -32,17 +31,17 @@ class FeedViewController: UIViewController {
     }
     
     // MARK: - Private API
-    
     private func showCollectionViewIfNeeded() {
         DispatchQueue.main.async {
-            if self.collectionView.alpha == 0 {
-                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                    self.collectionView.alpha = 1
-                    self.logoLabel.alpha = 0.0
-                }, completion: nil)
-            }
+            guard self.collectionView.alpha == 0 else { return }
+
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.collectionView.alpha = 1
+                self.logoLabel.alpha = 0.0
+            }, completion: nil)
         }
     }
+    
 }
 
 // MARK: - FeedViewInput
@@ -80,7 +79,6 @@ extension FeedViewController: FeedDisplayDelegate {
 }
 
 extension FeedViewController: MediaLinkCellDelegate {
-    
     func didOpenMediaAction(for link: LinkViewModel) {
         output.didOpenMediaAction(for: link)
     }

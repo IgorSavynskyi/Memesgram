@@ -24,7 +24,6 @@ struct LinkViewModel {
 }
 
 // MARK: - Nested Types
-
 extension LinkViewModel {
     enum LinkType {
         case text, media

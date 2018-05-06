@@ -40,8 +40,9 @@ class MediaLinkCell: TextLinkCell {
         saveButton.titleLabel?.font = .header
     }
     
-    override func renderLink(_ link: LinkViewModel) {
-        super.renderLink(link)
+    override func updateUI() {
+        guard let link = link else { return }
+        super.updateUI()
         
         if let thumb = link.thumbnail {
             downloadMedia(thumb)
@@ -66,7 +67,7 @@ class MediaLinkCell: TextLinkCell {
     // MARK: - Private API
     
     private func downloadMedia(_ url: String) {
-        guard let url = URL.init(string: url) else { return }
+        guard let url = URL(string: url) else { return }
         
         isIndicatorActive = true
         downloader.downloadImage(from: url) {[weak self] (image, error) in

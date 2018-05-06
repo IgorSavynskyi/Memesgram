@@ -13,7 +13,7 @@ class TextLinkCell: UICollectionViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var commentsLabel: UILabel!
     
-    var link: LinkViewModel?
+    var link: LinkViewModel? { didSet { updateUI() }}
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +30,8 @@ class TextLinkCell: UICollectionViewCell {
         commentsLabel.applyStyle(font: .medium, textColor: .textColor)
     }
     
-    func renderLink(_ link: LinkViewModel) {
-        self.link = link
+    func updateUI() {
+        guard let link = link else { return }
         authorLabel.text = link.author
         timeLabel.text = timeAgo(from: link.created)
         titleLabel.text = link.title

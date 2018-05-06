@@ -3,7 +3,6 @@ import Foundation
 typealias NetworkClientCompletion = (_ response: ServerResponse) -> Void
 
 class NetworkClient {
-    
     private let session: URLSession
     
     init(urlSession: URLSession) {

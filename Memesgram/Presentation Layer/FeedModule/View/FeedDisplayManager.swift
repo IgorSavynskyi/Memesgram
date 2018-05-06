@@ -10,7 +10,6 @@ class FeedDisplayManager: NSObject {
     private var itemsReserve = 4
 
     // MARK: - API
-    
     func renderLinks(_ links: [LinkViewModel]) {
         let beforeUpdateCount = dataSource.count
         dataSource.append(contentsOf: links)
@@ -24,7 +23,6 @@ class FeedDisplayManager: NSObject {
     }
     
     // MARK: - Private API
-    
     private func setupCollectionView() {
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -38,17 +36,17 @@ extension FeedDisplayManager: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let link = dataSource[indexPath.item]
+        
         switch link.type {
         case .text:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TextLinkCell.defaultReuseIdentifier, for: indexPath) as! TextLinkCell
-            cell.renderLink(link)
+            cell.link = link
             return cell
         case .media:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaLinkCell.defaultReuseIdentifier, for: indexPath) as! MediaLinkCell
             cell.delegate = self
-            cell.renderLink(link)
+            cell.link = link
             return cell
         }
     }
@@ -56,9 +54,7 @@ extension FeedDisplayManager: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-
 extension FeedDisplayManager: UICollectionViewDelegate {
-
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if observePagination == true, dataSource.count - indexPath.item < itemsReserve {
             delegate?.lackOfItemsSignal()
@@ -71,11 +67,12 @@ extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let link = dataSource[indexPath.item]
         let height: CGFloat
-
-        let columns: CGFloat = ApplicationService.shared.isLandscape ? 2 : 1
-        let cellSpacing: CGFloat = ApplicationService.shared.isLandscape ? 10 : 0
-        let availableWidth = ApplicationService.shared.isLandscape ? max(collectionView.bounds.width, collectionView.bounds.height)
-                                                                   : min(collectionView.bounds.width, collectionView.bounds.height)
+        
+        let isLandscape = ApplicationService.shared.isLandscape
+        let columns: CGFloat = isLandscape ? 2 : 1
+        let cellSpacing: CGFloat = isLandscape ? 10 : 0
+        let availableWidth = isLandscape ? max(collectionView.bounds.width, collectionView.bounds.height)
+                                         : min(collectionView.bounds.width, collectionView.bounds.height)
         
         let width = (availableWidth - cellSpacing)/max(columns, 1)
         
@@ -85,7 +82,6 @@ extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
                                                                     titleWidth: width - TextCellLayout.titleTextShrinkage,
                                                                     font: TextCellLayout.titleFont,
                                                                     baseHeight: TextCellLayout.fixedHeight)
-            
         case .media:
             height = LayoutEstimationEngine.linkCellEstimatedHeight(with: link.title,
                                                                     titleWidth: width - MediaCellLayout.titleTextShrinkage,
@@ -98,7 +94,6 @@ extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedDisplayManager: MediaLinkCellDelegate {
-    
     func didOpenMediaAction(for link: LinkViewModel) {
         delegate?.didOpenMediaAction(for: link)
     }

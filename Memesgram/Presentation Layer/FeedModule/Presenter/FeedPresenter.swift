@@ -14,11 +14,9 @@ class FeedPresenter: NSObject {
         feedService.getTopLinks(paginator.toRequestParams) { [weak self] (result) in
             switch result {
             case .success(let page):
-                print("✅SUCCESS \(page.links.count) AFTER: \(page.after)")
                 self?.updatePaginator(with: page.after)
                 self?.view.renderLinks(page.links)
             case .failure(let error):
-                print("❌Failure \(error.localizedDescription)")
                 self?.view.showAlert(title: nil, message: error.localizedDescription)
             }
         }
@@ -29,11 +27,7 @@ class FeedPresenter: NSObject {
     }
     
     private func saveImageToGallery(_ image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image,
-                                       self,
-                                       #selector(image(_:didFinishSavingWithError:contextInfo:)),
-                                       nil)
-
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
@@ -43,6 +37,7 @@ class FeedPresenter: NSObject {
             view.showAlert(title: "Saved", message: "✅")
         }
     }
+    
 }
 
 // MARK: - FeedViewOutput
@@ -73,6 +68,7 @@ extension FeedPresenter: FeedViewOutput {
         
         let imageDownloader = ImageDownloader()
         view.showContextActivityIndicator(true)
+        
         imageDownloader.downloadImage(from: url) {[weak self] (image, error) in
             if let image = image {
                 self?.saveImageToGallery(image)

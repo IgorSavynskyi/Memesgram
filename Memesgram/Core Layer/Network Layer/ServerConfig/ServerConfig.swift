@@ -12,7 +12,7 @@ struct ServerConfig {
     let name: String
     let baseUrl: String
     let headers: HeadersDict
-    let timeout: TimeInterval = 40.0    /// Global timeout for any request. If you want, you can override it in Request
+    let timeout: TimeInterval = 40.0    /// Global timeout for any request
 
     let emptyDataStatusCodes: Set<Int> = [204, 205]
     
