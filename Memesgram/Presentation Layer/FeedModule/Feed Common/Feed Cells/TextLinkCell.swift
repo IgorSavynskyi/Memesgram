@@ -1,7 +1,7 @@
 import UIKit
 
 struct TextCellLayout {
-    static let fixedHeight: CGFloat = 126
+    static let fixedHeight: CGFloat = 140
     static let titleTextShrinkage: CGFloat = 32
     static let titleFont = UIFont.header
 }

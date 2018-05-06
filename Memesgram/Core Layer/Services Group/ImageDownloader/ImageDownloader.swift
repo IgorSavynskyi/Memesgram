@@ -20,6 +20,7 @@ class ImageDownloader {
         self.completion = completion
         
         currentTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+            ApplicationService.shared.showNetworkActivity = false
             if error == nil {
                 if let data = data, let image = UIImage(data: data) {
                     completion(image, nil)
@@ -31,6 +32,7 @@ class ImageDownloader {
             }
         })
         
+        ApplicationService.shared.showNetworkActivity = true
         currentTask?.resume()
     }
     

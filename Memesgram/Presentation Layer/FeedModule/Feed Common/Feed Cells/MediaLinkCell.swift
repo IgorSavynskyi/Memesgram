@@ -1,13 +1,14 @@
 import UIKit
 
 struct MediaCellLayout {
-    static let fixedHeight: CGFloat = 302
+    static let fixedHeight: CGFloat = 316
     static let titleTextShrinkage: CGFloat = 32
     static let titleFont = UIFont.header
 }
 
 protocol MediaLinkCellDelegate: class {
     func didOpenMediaAction(for link: LinkViewModel)
+    func didSaveMediaAction(for link: LinkViewModel)
 }
 
 class MediaLinkCell: TextLinkCell {
@@ -36,7 +37,7 @@ class MediaLinkCell: TextLinkCell {
         super.setupElements()
         activityIndicator.color = .headlineColor
         saveButton.setTitleColor(.headlineColor, for: .normal)
-        saveButton.titleLabel?.font = .medium
+        saveButton.titleLabel?.font = .header
     }
     
     override func renderLink(_ link: LinkViewModel) {
@@ -45,6 +46,7 @@ class MediaLinkCell: TextLinkCell {
         if let thumb = link.thumbnail {
             downloadMedia(thumb)
         }
+        saveButton.isHidden = !link.hasImageToDownload
     }
     
     // MARK: - Actions
@@ -56,7 +58,9 @@ class MediaLinkCell: TextLinkCell {
     }
     
     @IBAction private func saveMediaAction(_ sender: Any) {
-        print(#function)
+        if let link = link {
+            delegate?.didSaveMediaAction(for: link)
+        }
     }
     
     // MARK: - Private API

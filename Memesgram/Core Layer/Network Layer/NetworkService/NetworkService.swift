@@ -25,9 +25,9 @@ class NetworkService: NetworkServiceProtocol {
                 return
             }
             
-            ApplicationService.shared.showNetworkActivityIndicator(true)
+            ApplicationService.shared.showNetworkActivity = true
             client.send(urlRequest) {[weak self] (response) in
-                ApplicationService.shared.showNetworkActivityIndicator(false)
+                ApplicationService.shared.showNetworkActivity = false
                 switch response {
                 case let .success(urlResponse: resp, data: data, request: _):
                     do {

@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-protocol ErrorAlertPresentable {
-    func showError(title: String?, message: String?)
+protocol AlertPresentable {
+    func showAlert(title: String?, message: String?)
 }
 
-extension ErrorAlertPresentable where Self: UIViewController {
-    func showError(title: String?, message: String?) {
+extension AlertPresentable where Self: UIViewController {
+    func showAlert(title: String?, message: String?) {
         let alertController = UIAlertController(title: title,
                                                 message: message,
                                                 preferredStyle: UIAlertControllerStyle.alert)

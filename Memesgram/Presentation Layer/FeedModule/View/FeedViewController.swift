@@ -5,6 +5,7 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var logoLabel: UILabel!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
 
     lazy private var feedDisplay = FeedDisplayManager()
 
@@ -51,12 +52,23 @@ extension FeedViewController: FeedViewInput {
         feedDisplay.collectionView = collectionView
         feedDisplay.delegate = self
         collectionView.alpha = 0
+        activityIndicator.color = .headlineColor
     }
     
     func renderLinks(_ links: [LinkViewModel]) {
         showCollectionViewIfNeeded()
         feedDisplay.renderLinks(links)
         feedDisplay.observePagination = true
+    }
+    
+    func showContextActivityIndicator(_ value: Bool) {
+        DispatchQueue.main.async {
+            if value == true {
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
 }
 
@@ -68,7 +80,12 @@ extension FeedViewController: FeedDisplayDelegate {
 }
 
 extension FeedViewController: MediaLinkCellDelegate {
+    
     func didOpenMediaAction(for link: LinkViewModel) {
         output.didOpenMediaAction(for: link)
+    }
+    
+    func didSaveMediaAction(for link: LinkViewModel) {
+        output?.didSaveMediaAction(for: link)
     }
 }

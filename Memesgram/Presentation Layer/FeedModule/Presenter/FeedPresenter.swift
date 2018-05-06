@@ -1,6 +1,7 @@
 import Foundation
+import UIKit
 
-class FeedPresenter {
+class FeedPresenter: NSObject {
     weak var view: FeedViewInput!
     weak var moduleDelegate: FeedModuleDelegate?
     
@@ -18,13 +19,29 @@ class FeedPresenter {
                 self?.view.renderLinks(page.links)
             case .failure(let error):
                 print("❌Failure \(error.localizedDescription)")
-                self?.view.showError(title: nil, message: error.localizedDescription)
+                self?.view.showAlert(title: nil, message: error.localizedDescription)
             }
         }
     }
     
     private func updatePaginator(with newAfter: String?) {
         paginator.after = newAfter ?? ""
+    }
+    
+    private func saveImageToGallery(_ image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image,
+                                       self,
+                                       #selector(image(_:didFinishSavingWithError:contextInfo:)),
+                                       nil)
+
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            view.showAlert(title: "Save error", message: error.localizedDescription)
+        } else {
+            view.showAlert(title: "Saved", message: "✅")
+        }
     }
 }
 
@@ -45,6 +62,24 @@ extension FeedPresenter: FeedViewOutput {
     func didOpenMediaAction(for link: LinkViewModel) {
         if let urlStr = link.url, let url = URL(string: urlStr) {
             moduleDelegate?.openUrl(url)
+        }
+    }
+    
+    func didSaveMediaAction(for link: LinkViewModel) {
+        guard let urlStr = link.url, let url = URL(string: urlStr) else {
+            view.showAlert(title: nil, message: "Ooops. Please try later")
+            return
+        }
+        
+        let imageDownloader = ImageDownloader()
+        view.showContextActivityIndicator(true)
+        imageDownloader.downloadImage(from: url) {[weak self] (image, error) in
+            if let image = image {
+                self?.saveImageToGallery(image)
+            } else {
+                self?.view.showAlert(title: nil, message: error?.localizedDescription)
+            }
+            self?.view.showContextActivityIndicator(false)
         }
     }
     

@@ -98,7 +98,12 @@ extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedDisplayManager: MediaLinkCellDelegate {
+    
     func didOpenMediaAction(for link: LinkViewModel) {
         delegate?.didOpenMediaAction(for: link)
+    }
+    
+    func didSaveMediaAction(for link: LinkViewModel) {
+        delegate?.didSaveMediaAction(for: link)
     }
 }

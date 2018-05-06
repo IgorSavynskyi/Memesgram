@@ -17,6 +17,10 @@ struct LinkViewModel {
             return .text
         }
     }
+    
+    var hasImageToDownload: Bool {
+        return ValidationService.shared.isImageUrl(url)
+    }
 }
 
 // MARK: - Nested Types
