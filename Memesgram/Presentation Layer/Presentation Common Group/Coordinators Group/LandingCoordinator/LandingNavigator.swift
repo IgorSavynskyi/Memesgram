@@ -1,9 +1,11 @@
 import Foundation
 import UIKit
+import SafariServices
 
-class LandingNavigator: Navigator {
+class LandingNavigator: NSObject, Navigator {
     enum Destination {
         case feed(FeedPresenter)
+        case webPage(URL)
     }
 
     private weak var navigationController: UINavigationController?
@@ -14,9 +16,14 @@ class LandingNavigator: Navigator {
     }
     
     // MARK: - Navigator
-    func navigate(to destination: Destination) {
-        let viewController = makeViewController(for: destination)
-        navigationController?.pushViewController(viewController, animated: true)
+    func navigate(to destination: Destination, transition: TransitionType) {
+        let vc = makeViewController(for: destination)
+        switch transition {
+        case .push:
+            navigationController?.pushViewController(vc, animated: true)
+        case .modal:
+            navigationController?.present(vc, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Private
@@ -24,6 +31,14 @@ class LandingNavigator: Navigator {
         switch destination {
         case .feed(let presenter):
             return ViewControllerFactory.makeFeedViewController(presenter)
+        case .webPage(let url):
+            return ViewControllerFactory.makeWebViewController(url, delegate: self)
         }
+    }
+}
+
+extension LandingNavigator: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

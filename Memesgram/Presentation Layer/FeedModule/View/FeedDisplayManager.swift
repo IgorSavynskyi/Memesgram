@@ -47,6 +47,7 @@ extension FeedDisplayManager: UICollectionViewDataSource {
             return cell
         case .media:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaLinkCell.defaultReuseIdentifier, for: indexPath) as! MediaLinkCell
+            cell.delegate = self
             cell.renderLink(link)
             return cell
         }
@@ -96,3 +97,8 @@ extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension FeedDisplayManager: MediaLinkCellDelegate {
+    func didOpenMediaAction(for link: LinkViewModel) {
+        delegate?.didOpenMediaAction(for: link)
+    }
+}

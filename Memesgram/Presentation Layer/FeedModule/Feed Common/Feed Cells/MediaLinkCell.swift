@@ -6,7 +6,13 @@ struct MediaCellLayout {
     static let titleFont = UIFont.header
 }
 
+protocol MediaLinkCellDelegate: class {
+    func didOpenMediaAction(for link: LinkViewModel)
+}
+
 class MediaLinkCell: TextLinkCell {
+    weak var delegate: MediaLinkCellDelegate?
+    
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var saveButton: UIButton!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
@@ -44,7 +50,9 @@ class MediaLinkCell: TextLinkCell {
     // MARK: - Actions
     
     @IBAction private func openMediaAction(_ sender: Any) {
-        print(#function)
+        if let link = link {
+            delegate?.didOpenMediaAction(for: link)
+        }
     }
     
     @IBAction private func saveMediaAction(_ sender: Any) {

@@ -11,7 +11,8 @@ class LandingCoordinator {
     
     private func runFeedFlow() {
         let presenter = FeedPresenter()
-        navigator.navigate(to: .feed(presenter))
+        presenter.moduleDelegate = self
+        navigator.navigate(to: .feed(presenter), transition: .push)
     }
 }
 
@@ -19,5 +20,11 @@ extension LandingCoordinator: Coordinator {
 
     func start() {
         runFeedFlow()
+    }
+}
+
+extension LandingCoordinator: FeedModuleDelegate {
+    func openUrl(_ url: URL) {
+        navigator.navigate(to: .webPage(url), transition: .modal)
     }
 }

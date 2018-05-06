@@ -2,6 +2,8 @@ import Foundation
 
 class FeedPresenter {
     weak var view: FeedViewInput!
+    weak var moduleDelegate: FeedModuleDelegate?
+    
     private lazy var feedService = FeedService()
     private lazy var paginator = FeedPaginator()
     
@@ -28,7 +30,7 @@ class FeedPresenter {
 
 // MARK: - FeedViewOutput
 extension FeedPresenter: FeedViewOutput {
-    
+
     func viewIsReady() {
         view.setupInitialState()
         requestNewLinks()
@@ -38,4 +40,12 @@ extension FeedPresenter: FeedViewOutput {
     func lackOfItemsSignal() {
         requestNewLinks()
     }
+    
+    // MARK: - MediaLinkCellDelegate
+    func didOpenMediaAction(for link: LinkViewModel) {
+        if let urlStr = link.url, let url = URL(string: urlStr) {
+            moduleDelegate?.openUrl(url)
+        }
+    }
+    
 }

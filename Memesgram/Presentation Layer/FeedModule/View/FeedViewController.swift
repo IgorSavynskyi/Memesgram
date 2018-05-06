@@ -66,3 +66,9 @@ extension FeedViewController: FeedDisplayDelegate {
         output.lackOfItemsSignal()
     }
 }
+
+extension FeedViewController: MediaLinkCellDelegate {
+    func didOpenMediaAction(for link: LinkViewModel) {
+        output.didOpenMediaAction(for: link)
+    }
+}
