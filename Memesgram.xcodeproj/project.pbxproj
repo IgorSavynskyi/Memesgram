@@ -13,6 +13,8 @@
 		37138E20209ED2F4009B2FB0 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */; };
 		37138E22209ED506009B2FB0 /* ReusableViewTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */; };
 		37138E25209EE3C9009B2FB0 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E24209EE3C9009B2FB0 /* ImageDownloader.swift */; };
+		37138E27209EF875009B2FB0 /* LayoutEstimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E26209EF875009B2FB0 /* LayoutEstimationEngine.swift */; };
+		37138E2A209F09EA009B2FB0 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37138E29209F09EA009B2FB0 /* ValidationService.swift */; };
 		379D2CC2209D8D13003DBD08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC1209D8D13003DBD08 /* AppDelegate.swift */; };
 		379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D2CC3209D8D13003DBD08 /* FeedViewController.swift */; };
 		379D2CC7209D8D13003DBD08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379D2CC5209D8D13003DBD08 /* Main.storyboard */; };
@@ -57,6 +59,8 @@
 		37138E1F209ED2F4009B2FB0 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		37138E21209ED506009B2FB0 /* ReusableViewTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewTrait.swift; sourceTree = "<group>"; };
 		37138E24209EE3C9009B2FB0 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		37138E26209EF875009B2FB0 /* LayoutEstimationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutEstimationEngine.swift; sourceTree = "<group>"; };
+		37138E29209F09EA009B2FB0 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		379D2CBE209D8D13003DBD08 /* Memesgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memesgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379D2CC1209D8D13003DBD08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379D2CC3209D8D13003DBD08 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,14 @@
 				37138E24209EE3C9009B2FB0 /* ImageDownloader.swift */,
 			);
 			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		37138E28209F09CE009B2FB0 /* ValidationService */ = {
+			isa = PBXGroup;
+			children = (
+				37138E29209F09EA009B2FB0 /* ValidationService.swift */,
+			);
+			path = ValidationService;
 			sourceTree = "<group>";
 		};
 		379D2CB5209D8D13003DBD08 = {
@@ -324,6 +336,7 @@
 		379D2D1A209DCD40003DBD08 /* Services Group */ = {
 			isa = PBXGroup;
 			children = (
+				37138E28209F09CE009B2FB0 /* ValidationService */,
 				37138E23209EE3A7009B2FB0 /* ImageDownloader */,
 				379D2D27209DD1EB003DBD08 /* LinkService */,
 				379D2D1B209DCD4F003DBD08 /* ApplicationService */,
@@ -407,6 +420,7 @@
 			children = (
 				379D2D35209E01C9003DBD08 /* TextLinkCell.swift */,
 				37138E1B209EC9D6009B2FB0 /* MediaLinkCell.swift */,
+				37138E26209EF875009B2FB0 /* LayoutEstimationEngine.swift */,
 			);
 			path = "Feed Cells";
 			sourceTree = "<group>";
@@ -497,6 +511,7 @@
 				379D2CE7209D970D003DBD08 /* FeedViewInputOutput.swift in Sources */,
 				379D2D33209DD57E003DBD08 /* JSONSerializable.swift in Sources */,
 				379D2CC4209D8D13003DBD08 /* FeedViewController.swift in Sources */,
+				37138E2A209F09EA009B2FB0 /* ValidationService.swift in Sources */,
 				379D2D21209DCEAA003DBD08 /* Globas Aliases.swift in Sources */,
 				37138E1C209EC9D6009B2FB0 /* MediaLinkCell.swift in Sources */,
 				37138E25209EE3C9009B2FB0 /* ImageDownloader.swift in Sources */,
@@ -520,6 +535,7 @@
 				379D2D10209DC95C003DBD08 /* Commons.swift in Sources */,
 				379D2D13209DC95C003DBD08 /* LinkResponseItem.swift in Sources */,
 				379D2D11209DC95C003DBD08 /* ServerConfig.swift in Sources */,
+				37138E27209EF875009B2FB0 /* LayoutEstimationEngine.swift in Sources */,
 				379D2D3B209E0386003DBD08 /* Fonts.swift in Sources */,
 				379D2CE5209D9532003DBD08 /* LandingNavigator.swift in Sources */,
 				379D2D3F209E0451003DBD08 /* UILabel+Additions.swift in Sources */,

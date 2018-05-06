@@ -32,7 +32,7 @@ class LinkService {
                                       created: Date.init(timeIntervalSince1970: TimeInterval($0.data.created_utc)),
                                       title: $0.data.title,
                                       commentCount: $0.data.num_comments,
-                                      thumbnailUrl: $0.data.thumbnail,
+                                      thumbnail: $0.data.thumbnail,
                                       url: $0.data.url)
         }
         

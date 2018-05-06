@@ -20,7 +20,7 @@ class FeedDisplayManager: NSObject {
     
     // MARK: - Private API
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView?.dataSource = self
         collectionView?.delegate = self
     }
@@ -53,13 +53,28 @@ extension FeedDisplayManager: UICollectionViewDataSource, UICollectionViewDelega
 extension FeedDisplayManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let link = dataSource[indexPath.item]
+        let height: CGFloat
 
+        let columns: CGFloat = ApplicationService.shared.isLandscape ? 2 : 1
+        let cellSpacing: CGFloat = ApplicationService.shared.isLandscape ? 10 : 0
+        
+        let width = (collectionView.bounds.width - cellSpacing)/max(columns, 1)
+        
         switch link.type {
         case .text:
-            return CGSize.init(width: collectionView.bounds.width, height: 200)
+            height = LayoutEstimationEngine.linkCellEstimatedHeight(with: link.title,
+                                                                    titleWidth: width - TextCellLayout.titleTextShrinkage,
+                                                                    font: TextCellLayout.titleFont,
+                                                                    baseHeight: TextCellLayout.fixedHeight)
+            
         case .media:
-            return CGSize.init(width: collectionView.bounds.width, height: 400)
+            height = LayoutEstimationEngine.linkCellEstimatedHeight(with: link.title,
+                                                                    titleWidth: width - MediaCellLayout.titleTextShrinkage,
+                                                                    font: MediaCellLayout.titleFont,
+                                                                    baseHeight: MediaCellLayout.fixedHeight)
         }
+        
+        return CGSize(width: width, height: height)
     }
 }
 

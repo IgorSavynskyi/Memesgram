@@ -1,5 +1,11 @@
 import UIKit
 
+struct TextCellLayout {
+    static let fixedHeight: CGFloat = 126
+    static let titleTextShrinkage: CGFloat = 32
+    static let titleFont = UIFont.header
+}
+
 class TextLinkCell: UICollectionViewCell {
     @IBOutlet weak private var authorLabel: UILabel!
     @IBOutlet weak private var bulletLabel: UILabel!
@@ -47,3 +53,6 @@ class TextLinkCell: UICollectionViewCell {
         }
     }
 }
+
+
+

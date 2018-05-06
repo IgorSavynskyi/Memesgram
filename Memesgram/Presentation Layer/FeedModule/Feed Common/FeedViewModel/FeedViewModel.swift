@@ -7,14 +7,14 @@ struct LinkViewModel {
     var created: Date
     var title: String
     var commentCount: Int
-    var thumbnailUrl: String?
+    var thumbnail: String?
     var url: String?
     
     var type: LinkType {
-        if thumbnailUrl == nil {
-            return .text
-        } else {
+        if ValidationService.shared.isValidURL(thumbnail) {
             return .media
+        } else {
+            return .text
         }
     }
 }

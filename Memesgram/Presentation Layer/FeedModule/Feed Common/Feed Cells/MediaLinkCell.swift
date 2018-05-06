@@ -1,20 +1,18 @@
 import UIKit
 
+struct MediaCellLayout {
+    static let fixedHeight: CGFloat = 302
+    static let titleTextShrinkage: CGFloat = 32
+    static let titleFont = UIFont.header
+}
+
 class MediaLinkCell: TextLinkCell {
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var saveButton: UIButton!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     
     private var isIndicatorActive = false {
-        didSet {
-            DispatchQueue.main.async {
-                if self.isIndicatorActive {
-                    self.activityIndicator.startAnimating()
-                } else {
-                    self.activityIndicator.stopAnimating()
-                }
-            }
-        }
+        didSet { updateIndicatorState() }
     }
     
     lazy private var downloader = ImageDownloader()
@@ -38,7 +36,7 @@ class MediaLinkCell: TextLinkCell {
     override func renderLink(_ link: LinkViewModel) {
         super.renderLink(link)
         
-        if let thumb = link.thumbnailUrl {
+        if let thumb = link.thumbnail {
             downloadMedia(thumb)
         }
     }
@@ -70,6 +68,16 @@ class MediaLinkCell: TextLinkCell {
     private func setMedia(_ image: UIImage) {
         DispatchQueue.main.async {
             self.imageView.image = image
+        }
+    }
+    
+    private func updateIndicatorState() {
+        DispatchQueue.main.async {
+            if self.isIndicatorActive {
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
 }
