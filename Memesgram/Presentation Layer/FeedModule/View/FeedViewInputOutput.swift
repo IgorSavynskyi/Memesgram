@@ -5,6 +5,6 @@ protocol FeedViewInput: class, ErrorAlertPresentable {
     func renderLinks(_ links: [LinkViewModel])
 }
 
-protocol FeedViewOutput {
+protocol FeedViewOutput: FeedDisplayDelegate {
     func viewIsReady()
 }

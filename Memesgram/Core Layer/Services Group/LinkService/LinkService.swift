@@ -1,7 +1,7 @@
 import Foundation
 
 class LinkService {
-    typealias GetLinksCompletion = (_ result: Result<[LinkViewModel]>) -> Void
+    typealias GetLinksCompletion = (_ result: Result<LinksPage>) -> Void
 
     private var networkService = NetworkService()
 
@@ -15,7 +15,8 @@ class LinkService {
             switch result {
             case .success(let response):
                 let models = self.convertResponseToViewModels(response.data.children)
-                completion(.success(models))
+                let page = LinksPage.init(links: models, after: response.data.after)
+                completion(.success(page))
             case .failure(let error):
                 completion(.failure(error))
             }

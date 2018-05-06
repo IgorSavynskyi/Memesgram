@@ -2,19 +2,24 @@ import Foundation
 import UIKit
 
 class FeedDisplayManager: NSObject {
-    private var dataSource: [LinkViewModel] = []
-    var collectionView: UICollectionView? {
-        didSet {
-            setupCollectionView()
-        }
-    }
+    weak var delegate: FeedDisplayDelegate?
+    var collectionView: UICollectionView? { didSet { setupCollectionView() }}
+    var observePagination: Bool?
     
+    private var dataSource: [LinkViewModel] = []
+    private var itemsReserve = 4
+
     // MARK: - API
     
     func renderLinks(_ links: [LinkViewModel]) {
+        let beforeUpdateCount = dataSource.count
         dataSource.append(contentsOf: links)
+        
         DispatchQueue.main.async {
-            self.collectionView?.reloadData()                // TODO: - update gracefully
+            self.collectionView?.performBatchUpdates({
+                let insertIndexPaths = Array(beforeUpdateCount...self.dataSource.count - 1).map { IndexPath(item: $0, section: 0) }
+                self.collectionView?.insertItems(at: insertIndexPaths)
+            }, completion: nil)
         }
     }
     
@@ -26,8 +31,8 @@ class FeedDisplayManager: NSObject {
     }
 }
 
-// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
-extension FeedDisplayManager: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: - UICollectionViewDataSource
+extension FeedDisplayManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -47,6 +52,17 @@ extension FeedDisplayManager: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
 
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension FeedDisplayManager: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if observePagination == true, dataSource.count - indexPath.item < itemsReserve {
+            delegate?.lackOfItemsSignal()
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

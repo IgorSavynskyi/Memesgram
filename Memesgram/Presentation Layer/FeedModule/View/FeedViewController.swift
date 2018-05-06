@@ -1,11 +1,14 @@
 import UIKit
 
 class FeedViewController: UIViewController {
+    var output: FeedViewOutput!
+
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var logoLabel: UILabel!
 
-    var output: FeedViewOutput!
     lazy private var feedDisplay = FeedDisplayManager()
+
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +49,20 @@ extension FeedViewController: FeedViewInput {
     func setupInitialState() {
         view.backgroundColor = .headlineColor
         feedDisplay.collectionView = collectionView
+        feedDisplay.delegate = self
         collectionView.alpha = 0
     }
     
     func renderLinks(_ links: [LinkViewModel]) {
         showCollectionViewIfNeeded()
         feedDisplay.renderLinks(links)
+        feedDisplay.observePagination = true
     }
 }
 
-
+extension FeedViewController: FeedDisplayDelegate {
+    func lackOfItemsSignal() {
+        feedDisplay.observePagination = false
+        output.lackOfItemsSignal()
+    }
+}
