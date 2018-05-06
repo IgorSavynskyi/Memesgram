@@ -7,5 +7,4 @@ protocol FeedViewInput: class, ErrorAlertPresentable {
 
 protocol FeedViewOutput {
     func viewIsReady()
-    func didRequestLinksAction()
 }

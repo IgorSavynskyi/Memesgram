@@ -13,16 +13,8 @@ class FeedPresenter {
                                                  requestPeriod: LinksRequestParameters.TimePeriod.week.rawValue)
         return params
     }
-}
-
-// MARK: - FeedViewOutput
-extension FeedPresenter: FeedViewOutput {
-
-    func viewIsReady() {
-        view.setupInitialState()
-    }
-
-    func didRequestLinksAction() {
+    
+    func requestLinks() {
         let params = generateRequestParameters()
         linkService.getTopLinks(params) { [weak self] (result) in
             switch result {
@@ -35,4 +27,15 @@ extension FeedPresenter: FeedViewOutput {
             }
         }
     }
+
+}
+
+// MARK: - FeedViewOutput
+extension FeedPresenter: FeedViewOutput {
+
+    func viewIsReady() {
+        view.setupInitialState()
+        requestLinks()
+    }
+
 }
