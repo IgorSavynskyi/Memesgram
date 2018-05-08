@@ -51,7 +51,6 @@ extension FeedViewController: FeedViewInput {
         feedDisplay.collectionView = collectionView
         feedDisplay.delegate = self
         collectionView.alpha = 0
-        activityIndicator.color = .headlineColor
     }
     
     func renderLinks(_ links: [LinkViewModel]) {

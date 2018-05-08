@@ -17,7 +17,7 @@ class LandingNavigator: NSObject, Navigator {
     
     // MARK: - Navigator
     func navigate(to destination: Destination, transition: TransitionType) {
-        let vc = makeViewController(for: destination)
+        let vc = viewController(for: destination)
         switch transition {
         case .push:
             navigationController?.pushViewController(vc, animated: true)
@@ -26,8 +26,8 @@ class LandingNavigator: NSObject, Navigator {
         }
     }
     
-    // MARK: - Private
-    private func makeViewController(for destination: Destination) -> UIViewController {
+    // MARK: - Private API
+    private func viewController(for destination: Destination) -> UIViewController {
         switch destination {
         case .feed(let presenter):
             return ViewControllerFactory.makeFeedViewController(presenter)

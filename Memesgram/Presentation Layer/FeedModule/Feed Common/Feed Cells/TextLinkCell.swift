@@ -23,11 +23,8 @@ class TextLinkCell: UICollectionViewCell {
     // MARK: - API
     
     func setupElements() {
-        authorLabel.applyStyle(font: .medium, textColor: .textColor)
-        bulletLabel.applyStyle(font: .medium, textColor: .textColor)
-        timeLabel.applyStyle(font: .medium, textColor: .textColor)
         titleLabel.applyStyle(font: .header, textColor: .textColor)
-        commentsLabel.applyStyle(font: .medium, textColor: .textColor)
+        applyStyle(font: .medium, textColor: .textColor, to: authorLabel, bulletLabel, timeLabel, commentsLabel)
     }
     
     func updateUI() {
