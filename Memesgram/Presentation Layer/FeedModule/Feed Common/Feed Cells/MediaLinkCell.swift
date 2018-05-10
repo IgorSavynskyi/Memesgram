@@ -1,6 +1,6 @@
 import UIKit
 
-struct MediaCellLayout {
+enum MediaCellLayout {
     static let fixedHeight: CGFloat = 316
     static let titleTextShrinkage: CGFloat = 32
     static let titleFont = UIFont.header
